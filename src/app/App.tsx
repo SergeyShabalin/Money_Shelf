@@ -7,6 +7,7 @@ import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "app/providers/ThemeProvider";
 
 import './styles/index.scss'
+import {AppRouter} from "app/providers/router";
 
 
 
@@ -19,12 +20,7 @@ const App = () => {
             <Link to={'/main'}>Главная</Link>
             <Link to={'/about'}>О странице</Link>
             <button onClick={toggleTheme}>Сменить тему</button>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path='/main' element={<MainPage/>}/>
-                    <Route path='/about' element={<AboutPage/>}/>
-                </Routes>
-            </Suspense>
+            <AppRouter/>
         </div>
     );
 };

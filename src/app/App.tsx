@@ -1,5 +1,5 @@
 import React, {Suspense} from 'react';
-import {Link, Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 
 import {AboutPage} from "pages/AboutPage";
 import {MainPage} from "pages/MainPage";
@@ -8,6 +8,8 @@ import {useTheme} from "app/providers/ThemeProvider";
 
 import './styles/index.scss'
 import {AppRouter} from "app/providers/router";
+import {Navbar} from "widgets/Navbar";
+
 
 
 
@@ -17,8 +19,7 @@ const App = () => {
 
     return (
         <div className={classNames('app', {hovered: true, selected: false}, [theme])}>
-            <Link to={'/main'}>Главная</Link>
-            <Link to={'/about'}>О странице</Link>
+           <Navbar/>
             <button onClick={toggleTheme}>Сменить тему</button>
             <AppRouter/>
         </div>
